@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Create New Post - RealTalk</title>
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <link rel="stylesheet" href="css/choices.min.css">
+  <script src="js/choices.min.js"></script>
+
+
+  <!-- Core build with no theme, formatting, non-essential modules -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
+
+  <!-- Icon font -->
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="rt-page-outer">
+    <header class="rt-header">
+      <a class="my-auto ml-3" href="index.html"><img src="img/icon-logo-white.svg"></img></a>
+
+      <div class="rt-header-profile ml-auto">
+        <div class="form-group">
+          <span class="iconify" data-icon="ant-design:search-outlined" data-inline="false"></span>
+          <input class="form-control" type="text" placeholder="Search">
+        </div>
+        <div class="text">
+          <h5 class="title">Ura Chen</h5>
+          <div class="sub-title">Developer</div>
+        </div>
+        <a a href="#" data-toggle="dropdown">
+          <div class="rt-avatar self" style="background-image: url(img/demo/avatar-1.jpg)"></div>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item">基本資料</a>
+          <a href="#" class="dropdown-item">追蹤設定</a>
+          <a href="#" class="dropdown-item">我的收藏</a>
+          <a href="#" class="dropdown-item">我的文章</a>
+          <a href="javascript:;" id="logout" class="dropdown-item">登出</a>
+        </div>
+      </div>
+    </header>
+    <div class="rt-main-nav">
+      <nav class="navbar navbar-expand-lg navbar-light mt-n2">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="las la-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="main.html">Travel <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="main.html">Sport</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="main.html">Food</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="main.html">House</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="main.html">Life</a>
+            </li>
+          </ul>
+        </div>
+
+        <a class="add-post" href="add_post.html"><span class="iconify" data-icon="carbon:add-alt"
+            data-inline="false"></span></a>
+      </nav>
+    </div>
+    <div class="rt-content-wrapper">
+      <main class="rt-main-content">
+        <div class="container-fluid">
+          <div class="rt-board">
+            <div class="rt-board-header rt-board-header-sticky">
+
+              <h1 class="h5"><span class="mr-2 iconify" data-icon="bx:bxs-edit" data-inline="false"></span>Create New
+                Topic</h1>
+            </div>
+            <div class="rt-board-body py-2 pt-4">
+              <div class="row">
+                <div class="col-xl-8">
+                  <h1 class="h6 mt-3">Title</h1>
+                  <div class="form-group">
+                    <input type="text" placeholder="Please Input Topic Title" class="form-control" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-8">
+                  <h1 class="h6 mt-3">Type</h1>
+                  <a href="javascript:;" class="btn btn-outline-light">
+                    <span class="post-type-icon form-group mx-auto iconify"
+                      data-icon="ant-design:question-circle-outlined" data-inline="false"></span>
+                    <span>討論</span>
+                  </a>
+                  <a href="javascript:;" class="btn btn-outline-light">
+                    <span class="post-type-icon form-group mx-auto iconify" data-icon="ic:outline-article"
+                      data-inline="false"></span>
+                    <span>分享</span>
+                  </a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-4">
+                  <h1 class="h6 mt-4">Category</h1>
+                  <select id="selCategory" type="text" placeholder="Enter something">
+                    <option value="travel">Travel</option>
+                    <option value="sport">Sport</option>
+                    <option value="food">Food</option>
+                    <option value="house">House</option>
+                  </select>
+                </div>
+                <div class="col-xl-4">
+                  <h1 class="h6 mt-4">Tags</h1>
+                  <input id="selTags" type="text" value="" placeholder="Enter something">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-4 col-sm-12 my-auto">
+                  <h1 class="h6 mt-4">發布時間</h1>
+                  <div class="form-check form-check-inline"><label class="form-check-label"><input type="checkbox"
+                        class="form-check-input">
+                      <div class="rt-check-bg"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="10"
+                          viewBox="0 0 12 10">
+                          <polyline fill="none" stroke="#FFF" stroke-linecap="square" stroke-width="2"
+                            points="3.4 8.9 6.2 11.8 12.6 5.4" transform="translate(-2 -3)" class="rt-check-path">
+                          </polyline>
+                        </svg></div>
+                      <div class="rt-check-label">指定發布時間</div>
+
+                    </label> </div>
+                  <div class="form-check form-check-inline"><input type="text" name="publishDate"
+                      class="form-control" /></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-8">
+                  <h1 class="h6 mt-3">Content</h1>
+                  <div id="editor">
+                    <p>Hello World!</p>
+                    <p>Some initial <strong>bold</strong> text</p>
+                    <p><br></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-5 mb-3">
+                <div class="col-xl-3 col-sm-12  my-auto">
+                  <a href="main.html" class="btn btn-white">取消</a>
+                  <a href="#" class="btn btn-outline-primary">儲存草稿</a>
+                  <a href="#" class="btn btn-primary">發布</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  </div>
+  </main>
+  </div>
+</body>
+
+</html>
+<script>
+  let category = document.getElementById('selCategory');
+  let categoryChoice = new Choices(category, {
+    delimiter: ',',
+    editItems: true,
+    maxItems: 5
+  });
+  let tags = document.getElementById('selTags');
+  let tagsChoice = new Choices(tags, {
+    delimiter: ',',
+    editItems: true,
+    maxItems: 5,
+    removeButton: true
+  });
+
+
+  $(function () {
+    $('input[name="publishDate"]').daterangepicker({
+      timePicker: true,
+      singleDatePicker: true,
+      minDate: moment(),
+      locale: {
+        format: 'DD/MMM/YYYY HH:mm:ss'
+      }
+    }
+    );
+  });
+  let toolbarOptions = [
+    [{ 'font': [] }],
+    ['bold', 'italic', 'underline', 'strike'],
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+    [{ 'color': [] }, { 'background': [] }, { 'align': [] }],
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+    ['blockquote', 'code-block'],
+    ['link', 'image']
+  ];
+  let quill = new Quill('#editor', {
+
+    modules: {
+      toolbar: toolbarOptions
+    },
+    theme: 'snow'
+  });
+</script>
